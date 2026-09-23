@@ -1,0 +1,21 @@
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# WordPress generated content
+wordpress/wp-content/uploads/
+wordpress/wp-content/cache/
+wordpress/wp-content/upgrade/
+
+# Logs / temp
+*.log
+*.tmp
+
+# Local environment / secrets
+.env
+
+# Backups
+*.sql
+*.bak
