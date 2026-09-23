@@ -15,6 +15,7 @@ wordpress/wp-content/upgrade/
 
 # Local environment / secrets
 .env
+wordpress/wp-config.php
 
 # Backups
 *.sql
