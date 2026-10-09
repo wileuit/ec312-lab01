@@ -1,16 +1,1313 @@
 /*
 Theme Name: Flatsome Child
-Description: This is a child theme for Flatsome Theme
-Author: UX Themes
+Description: EC312 Lab 02 - Shop Dong Ho Custom Theme
+Author: EC312 Lab
 Template: flatsome
-Version: 3.0
+Version: 3.1
 */
 
-/*************** ADD CUSTOM CSS HERE.   ***************/
+/* ==========================================
+   EC312 LAB 02 - GLOBAL
+========================================== */
 
+:root {
+  --ec312-navy: #101b2d;
+  --ec312-gold: #d6b47a;
+  --ec312-text: #d8dce5;
+  --ec312-border: #364357;
+}
 
-@media only screen and (max-width: 48em) {
-/*************** ADD MOBILE ONLY CSS HERE  ***************/
+/* ==========================================
+   HIDE DEFAULT FOOTER WIDGETS
+========================================== */
 
+/*
+ * Hide demo footer widget sections.
+ * This does not delete the original widgets.
+ */
 
+#footer .footer-widgets,
+#footer .footer-1,
+#footer .footer-2 {
+  display: none !important;
+}
+
+/* ==========================================
+   CUSTOM FOOTER
+========================================== */
+
+.ec312-footer {
+  background: var(--ec312-navy);
+  color: var(--ec312-text);
+  padding: 65px 30px 25px;
+  width: 100%;
+}
+
+.ec312-footer-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 35px;
+}
+
+.ec312-footer-column {
+  min-width: 0;
+}
+
+.ec312-footer-column h3 {
+  color: var(--ec312-gold);
+
+  font-size: 16px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+  margin-bottom: 22px;
+}
+
+.ec312-footer-column p {
+  color: var(--ec312-text);
+
+  font-size: 14px;
+  line-height: 1.9;
+
+  margin-bottom: 12px;
+}
+
+.ec312-footer-column ul {
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+}
+
+.ec312-footer-column ul li {
+  color: var(--ec312-text);
+
+  font-size: 14px;
+  line-height: 2.2;
+
+  margin: 0;
+}
+
+.ec312-footer-column a {
+  color: var(--ec312-text);
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.ec312-footer-column a:hover {
+  color: var(--ec312-gold);
+}
+
+/* ==========================================
+   FOOTER COPYRIGHT
+========================================== */
+
+.ec312-footer-bottom {
+  max-width: 1200px;
+
+  margin: 50px auto 0;
+  padding-top: 22px;
+
+  border-top: 1px solid var(--ec312-border);
+
+  text-align: center;
+}
+
+.ec312-footer-bottom p {
+  color: #aeb8c8;
+
+  font-size: 13px;
+  margin: 0;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media screen and (max-width: 991px) {
+  .ec312-footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+  }
+
+  .ec312-footer {
+    padding: 50px 25px 25px;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media screen and (max-width: 600px) {
+  .ec312-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .ec312-footer {
+    padding: 45px 20px 20px;
+  }
+
+  .ec312-footer-column h3 {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+
+  .ec312-footer-column p,
+  .ec312-footer-column ul li {
+    font-size: 13px;
+  }
+
+  .ec312-footer-bottom {
+    margin-top: 30px;
+  }
+}
+
+/* ==========================================
+   EC312 LAB 02 - HIDE OLD FLATSOME FOOTER
+========================================== */
+
+/* Hide the original Flatsome copyright bar */
+#footer .absolute-footer {
+  display: none !important;
+}
+
+/* Keep custom footer visible */
+#footer .ec312-footer,
+.ec312-footer {
+  display: block !important;
+}
+
+/* ==========================================
+   EC312 LAB 02 - PRODUCT CATALOG
+========================================== */
+
+/* Shop banner */
+.ec312-shop-banner {
+  background: #101b2d;
+  padding: 65px 20px;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.ec312-shop-eyebrow {
+  color: #d6b47a;
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+.ec312-shop-banner h1 {
+  color: #fff;
+  font-size: 34px;
+  margin: 15px 0;
+  letter-spacing: 2px;
+}
+
+.ec312-shop-banner p {
+  color: #d8dce5;
+  font-size: 15px;
+}
+
+/* Product cards */
+.woocommerce.archive .product-small {
+  transition: transform 0.25s ease;
+}
+
+.woocommerce.archive .product-small:hover {
+  transform: translateY(-5px);
+}
+
+.woocommerce.archive .product-small .box-image {
+  background: #f7f8fa;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.woocommerce.archive .product-small .box-text {
+  padding: 15px 5px;
+}
+
+.woocommerce.archive .product-small .name {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.woocommerce.archive .product-small .price {
+  color: #101b2d;
+  font-weight: 700;
+}
+
+/* Sale badge */
+.woocommerce.archive .onsale {
+  background: #d6b47a !important;
+  color: #101b2d !important;
+  border-radius: 3px;
+  font-size: 11px;
+  padding: 5px 9px;
+}
+
+/* Sidebar */
+.woocommerce.archive #shop-sidebar {
+  padding: 20px;
+  background: #f8f9fb;
+  border-radius: 5px;
+}
+
+.woocommerce.archive #shop-sidebar .widget-title {
+  color: #101b2d;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Sorting */
+.woocommerce.archive .woocommerce-ordering select {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fff;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .ec312-shop-banner {
+    padding: 45px 15px;
+  }
+
+  .ec312-shop-banner h1 {
+    font-size: 25px;
+  }
+
+  .woocommerce.archive .product-small .name {
+    font-size: 12px;
+  }
+}
+
+/* ==========================================
+   EC312 LAB 02 - CATALOG V2
+========================================== */
+
+/* Four-column product grid on desktop */
+@media (min-width: 992px) {
+  body.post-type-archive-product .shop-container .products.row {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  body.post-type-archive-product .shop-container .products.row > .product {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
+/* Tablet */
+@media (min-width: 601px) and (max-width: 991px) {
+  body.post-type-archive-product .shop-container .products.row {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  body.post-type-archive-product .shop-container .products.row {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+}
+
+/* Product cards */
+body.post-type-archive-product .shop-container .product-small {
+  height: 100%;
+  background: #ffffff;
+  border: 1px solid #edf0f4;
+  border-radius: 6px;
+  overflow: hidden;
+  transition:
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+body.post-type-archive-product .shop-container .product-small:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(16, 27, 45, 0.1);
+}
+
+/* Product image */
+body.post-type-archive-product .shop-container .box-image img {
+  width: 100%;
+  object-fit: contain;
+}
+
+/* Sidebar */
+body.post-type-archive-product #shop-sidebar {
+  background: #f8f9fb;
+  border: 1px solid #edf0f4;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+/* Responsive shop banner */
+.ec312-shop-banner {
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* =====================================================
+   EC312 LAB 02 - PRODUCT DETAILS V2
+   Luxury Watch Store
+===================================================== */
+
+/* Main product area */
+body.single-product .product-main {
+  padding-top: 55px;
+  padding-bottom: 50px;
+  background: #ffffff;
+}
+
+/* Product image */
+body.single-product .product-gallery .woocommerce-product-gallery,
+body.single-product .product-gallery .product-images {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+body.single-product .product-gallery img {
+  object-fit: contain;
+}
+
+/* Gallery thumbnails */
+body.single-product .product-thumbnails img {
+  border-radius: 5px;
+  transition: opacity 0.2s ease;
+}
+
+body.single-product .product-thumbnails img:hover {
+  opacity: 0.8;
+}
+
+/* Product title */
+body.single-product .product-title {
+  color: #101b2d;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.4px;
+  margin-bottom: 18px;
+}
+
+/* Product price */
+body.single-product .product-info .price {
+  color: #101b2d;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+body.single-product .product-info .price del {
+  color: #9ca3af;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+body.single-product .product-info .price ins {
+  color: #101b2d;
+  text-decoration: none;
+}
+
+/* Add to cart button */
+body.single-product .single_add_to_cart_button {
+  background: #101b2d !important;
+  color: #ffffff !important;
+  border: 1px solid #101b2d !important;
+  border-radius: 4px;
+  min-height: 46px;
+  padding: 0 25px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: all 0.25s ease;
+}
+
+body.single-product .single_add_to_cart_button:hover {
+  background: #d6b47a !important;
+  border-color: #d6b47a !important;
+  color: #101b2d !important;
+}
+
+/* Quantity input */
+body.single-product .quantity input {
+  min-height: 44px;
+}
+
+/* Product metadata */
+body.single-product .product_meta {
+  border-top: 1px solid #e9edf2;
+  margin-top: 25px;
+  padding-top: 20px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+body.single-product .product_meta a {
+  color: #101b2d;
+}
+
+/* =====================================================
+   PURCHASE BENEFITS
+===================================================== */
+
+.ec312-purchase-benefits {
+  margin: 30px 0 15px;
+  padding: 22px;
+  background: #f7f8fa;
+  border: 1px solid #e9edf2;
+  border-radius: 6px;
+}
+
+.ec312-benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 13px 0;
+}
+
+.ec312-benefit + .ec312-benefit {
+  border-top: 1px solid #e2e6ec;
+}
+
+.ec312-benefit-icon {
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #101b2d;
+  color: #d6b47a;
+  border-radius: 50%;
+  font-size: 16px;
+}
+
+.ec312-benefit strong {
+  display: block;
+  color: #101b2d;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  margin-bottom: 5px;
+}
+
+.ec312-benefit p {
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* =====================================================
+   PRODUCT DESCRIPTION
+===================================================== */
+
+body.single-product .product-footer {
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+.ec312-detail-heading {
+  text-align: center;
+  padding: 35px 15px 25px;
+}
+
+.ec312-detail-heading span {
+  color: #b18a50;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.ec312-detail-heading h2 {
+  color: #101b2d;
+  font-size: 24px;
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+body.single-product .woocommerce-tabs {
+  border-top: 1px solid #e9edf2;
+}
+
+body.single-product .woocommerce-tabs .tabs a {
+  color: #101b2d;
+  font-weight: 600;
+}
+
+body.single-product .woocommerce-Tabs-panel {
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* =====================================================
+   RELATED PRODUCTS
+===================================================== */
+
+body.single-product .related.products {
+  padding-top: 35px;
+  border-top: 1px solid #e9edf2;
+}
+
+body.single-product .related.products > h2,
+body.single-product .related.products .section-title {
+  color: #101b2d;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+body.single-product .related .product-small {
+  border: 1px solid #edf0f4;
+  border-radius: 6px;
+  overflow: hidden;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+body.single-product .related .product-small:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(16, 27, 45, 0.08);
+}
+
+body.single-product .related .box-image {
+  background: #f8f9fb;
+}
+
+body.single-product .related .box-text {
+  padding: 15px 12px;
+}
+
+body.single-product .related .price {
+  color: #101b2d;
+  font-weight: 700;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 768px) {
+  body.single-product .product-main {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  body.single-product .product-title {
+    font-size: 23px;
+  }
+
+  body.single-product .product-info .price {
+    font-size: 23px;
+  }
+
+  .ec312-purchase-benefits {
+    padding: 15px;
+    margin-top: 20px;
+  }
+
+  .ec312-detail-heading h2 {
+    font-size: 20px;
+  }
+
+  body.single-product .single_add_to_cart_button {
+    padding: 0 15px;
+  }
+}
+
+/* EC312 - Product Details V2 Refinement */
+
+/* Related product cards */
+body.single-product .related .product-small .box {
+  height: 100%;
+}
+
+body.single-product .related .product-small .box-text {
+  padding: 12px;
+}
+
+body.single-product .related .product-small .name {
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+  font-weight: 500;
+  margin-bottom: 8px;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+
+body.single-product .related .product-small .box-image img {
+  width: 100%;
+  height: 210px;
+  object-fit: contain;
+}
+
+body.single-product .related .product-small .price {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  body.single-product .related .product-small .box-image img {
+    height: 150px;
+  }
+}
+
+/* =====================================================
+   EC312 LAB 02 - CART PAGE V2
+===================================================== */
+
+/* Cart layout */
+body.woocommerce-cart .cart-container {
+  padding-top: 35px;
+  padding-bottom: 65px;
+}
+
+/* Cart introduction */
+.ec312-cart-intro {
+  text-align: center;
+  padding: 20px 15px 35px;
+}
+
+.ec312-cart-intro span {
+  color: #b18a50;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.ec312-cart-intro h2 {
+  color: #101b2d;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.ec312-cart-intro p {
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* Cart product table */
+body.woocommerce-cart .shop_table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+body.woocommerce-cart .shop_table th {
+  color: #101b2d;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  padding: 15px 10px;
+}
+
+body.woocommerce-cart .shop_table td {
+  padding: 18px 10px;
+  vertical-align: middle;
+}
+
+/* Product images */
+body.woocommerce-cart .cart_item img {
+  border-radius: 5px;
+}
+
+/* Product links */
+body.woocommerce-cart .product-name a {
+  color: #101b2d;
+  font-weight: 600;
+}
+
+body.woocommerce-cart .product-name a:hover {
+  color: #b18a50;
+}
+
+/* Cart totals */
+body.woocommerce-cart .cart_totals {
+  background: #f8f9fb;
+  border: 1px solid #e9edf2;
+  border-radius: 6px;
+  padding: 25px;
+}
+
+body.woocommerce-cart .cart_totals h2 {
+  color: #101b2d;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+/* Checkout button */
+body.woocommerce-cart .checkout-button {
+  background: #101b2d !important;
+  border: 1px solid #101b2d !important;
+  color: #ffffff !important;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  min-height: 48px;
+  transition: all 0.25s ease;
+}
+
+body.woocommerce-cart .checkout-button:hover {
+  background: #d6b47a !important;
+  border-color: #d6b47a !important;
+  color: #101b2d !important;
+}
+
+/* Coupon */
+body.woocommerce-cart .coupon input {
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+
+/* Support message */
+.ec312-cart-support {
+  margin-top: 20px;
+  padding: 18px;
+  background: #ffffff;
+  border: 1px solid #e9edf2;
+  border-left: 3px solid #d6b47a;
+  border-radius: 4px;
+}
+
+.ec312-cart-support strong {
+  display: block;
+  color: #101b2d;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.ec312-cart-support p {
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
+/* Cart progress navigation */
+body.woocommerce-cart .checkout-breadcrumbs a {
+  color: #64748b;
+}
+
+body.woocommerce-cart .checkout-breadcrumbs a.current {
+  color: #101b2d;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .ec312-cart-intro h2 {
+    font-size: 23px;
+  }
+
+  body.woocommerce-cart .cart_totals {
+    padding: 16px;
+  }
+
+  body.woocommerce-cart .shop_table td {
+    padding: 12px 6px;
+  }
+}
+
+/* =====================================================
+   EC312 LAB 02 - CHECKOUT V2
+   Navy & Champagne Design
+===================================================== */
+
+/* Checkout introduction */
+
+.ec312-checkout-intro {
+  text-align: center;
+  padding: 20px 15px 38px;
+}
+
+.ec312-checkout-intro span {
+  display: block;
+  color: #b18a50;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  margin-bottom: 12px;
+}
+
+.ec312-checkout-intro h2 {
+  color: #101b2d;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.ec312-checkout-intro p {
+  color: #64748b;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Main checkout layout */
+
+body.woocommerce-checkout .checkout-page {
+  padding-top: 30px;
+  padding-bottom: 65px;
+}
+
+body.woocommerce-checkout form.checkout {
+  margin-top: 10px;
+}
+
+/* Billing headings */
+
+body.woocommerce-checkout .woocommerce-billing-fields > h3,
+body.woocommerce-checkout .woocommerce-additional-fields > h3 {
+  color: #101b2d;
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+/* Form labels */
+
+body.woocommerce-checkout .woocommerce-billing-fields label,
+body.woocommerce-checkout .woocommerce-additional-fields label {
+  color: #334155;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Inputs */
+
+body.woocommerce-checkout .woocommerce-billing-fields input.input-text,
+body.woocommerce-checkout .woocommerce-billing-fields select,
+body.woocommerce-checkout .woocommerce-additional-fields textarea {
+  min-height: 44px;
+  background: #ffffff;
+  border: 1px solid #dce2e9;
+  border-radius: 5px;
+  box-shadow: none;
+  font-size: 14px;
+  padding: 10px 12px;
+  transition: border-color 0.2s ease;
+}
+
+body.woocommerce-checkout .woocommerce-billing-fields input:focus,
+body.woocommerce-checkout .woocommerce-additional-fields textarea:focus {
+  border-color: #c6a36a;
+  box-shadow: 0 0 0 2px rgba(198, 163, 106, 0.12);
+  outline: none;
+}
+
+/* Order review box */
+
+body.woocommerce-checkout #order_review {
+  background: #f8f9fb;
+  border: 1px solid #e3e8ef;
+  border-radius: 6px;
+  padding: 25px;
+}
+
+/* Order review title */
+
+body.woocommerce-checkout #order_review_heading {
+  color: #101b2d;
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+/* Order table */
+
+body.woocommerce-checkout .woocommerce-checkout-review-order-table {
+  background: transparent;
+}
+
+body.woocommerce-checkout .woocommerce-checkout-review-order-table th {
+  color: #334155;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+body.woocommerce-checkout .woocommerce-checkout-review-order-table td {
+  color: #475569;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+body.woocommerce-checkout
+  .woocommerce-checkout-review-order-table
+  .order-total
+  .amount {
+  color: #101b2d;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+/* Payment methods */
+
+body.woocommerce-checkout #payment {
+  background: transparent;
+}
+
+body.woocommerce-checkout #payment .payment_methods {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 18px;
+}
+
+body.woocommerce-checkout #payment .payment_box {
+  background: #ffffff;
+  border: 1px solid #e9edf2;
+  border-radius: 5px;
+  color: #64748b;
+}
+
+/* Place order button */
+
+body.woocommerce-checkout #place_order {
+  width: 100%;
+  min-height: 50px;
+  background: #101b2d !important;
+  border: 1px solid #101b2d !important;
+  border-radius: 4px;
+  color: #ffffff !important;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: background 0.25s ease;
+}
+
+body.woocommerce-checkout #place_order:hover {
+  background: #d6b47a !important;
+  border-color: #d6b47a !important;
+  color: #101b2d !important;
+}
+
+/* Reassurance section */
+
+.ec312-checkout-reassurance {
+  margin-top: 22px;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #e9edf2;
+  border-left: 3px solid #d6b47a;
+  border-radius: 4px;
+}
+
+.ec312-checkout-reassurance-item {
+  padding: 12px 0;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.ec312-checkout-reassurance-item:last-child {
+  border-bottom: none;
+}
+
+.ec312-checkout-reassurance-item strong {
+  display: block;
+  color: #101b2d;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.ec312-checkout-reassurance-item p {
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Coupon notice */
+
+body.woocommerce-checkout .woocommerce-form-coupon-toggle {
+  margin-bottom: 20px;
+}
+
+/* Mobile responsiveness */
+
+@media (max-width: 768px) {
+  .ec312-checkout-intro {
+    padding: 15px 10px 25px;
+  }
+
+  .ec312-checkout-intro h2 {
+    font-size: 23px;
+  }
+
+  body.woocommerce-checkout #order_review {
+    padding: 16px;
+  }
+
+  .ec312-checkout-reassurance {
+    padding: 14px;
+  }
+
+  body.woocommerce-checkout #place_order {
+    min-height: 48px;
+  }
+}
+
+/* EC312 - Checkout V2 final polish */
+
+/* Flatsome checkout order panel */
+body.woocommerce-checkout .checkout-page .woocommerce-checkout-review-order {
+  border: 1px solid #e3e8ef !important;
+  border-radius: 6px;
+  background: #f8f9fb;
+  padding: 20px;
+}
+
+/* Place order button */
+body.woocommerce-checkout form.checkout #place_order,
+body.woocommerce-checkout
+  form.checkout
+  button[name="woocommerce_checkout_place_order"] {
+  background-color: #101b2d !important;
+  border-color: #101b2d !important;
+  color: #fff !important;
+  border-radius: 4px;
+  min-height: 48px;
+  font-weight: 700;
+  transition: all 0.25s ease;
+}
+
+body.woocommerce-checkout form.checkout #place_order:hover {
+  background-color: #d6b47a !important;
+  border-color: #d6b47a !important;
+  color: #101b2d !important;
+}
+
+/* EC312 - Checkout V2: Flatsome overrides */
+
+/* Order review outer panel */
+body.woocommerce-checkout .checkout-page .woocommerce-checkout-review-order,
+body.woocommerce-checkout .checkout-page #order_review,
+body.woocommerce-checkout
+  .checkout-page
+  .woocommerce-checkout-review-order-inner {
+  background: #f8f9fb !important;
+  border-color: #e3e8ef !important;
+  border-radius: 6px !important;
+}
+
+/* Flatsome order review border */
+body.woocommerce-checkout .woocommerce-checkout-review-order-inner {
+  border: 1px solid #e3e8ef !important;
+}
+
+/* Checkout button, including Flatsome styles */
+body.woocommerce-checkout #place_order,
+body.woocommerce-checkout #payment button#place_order,
+body.woocommerce-checkout button.button.alt#place_order {
+  background: #101b2d !important;
+  background-color: #101b2d !important;
+  border-color: #101b2d !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+body.woocommerce-checkout #place_order:hover,
+body.woocommerce-checkout #payment button#place_order:hover {
+  background: #d6b47a !important;
+  background-color: #d6b47a !important;
+  border-color: #d6b47a !important;
+  color: #101b2d !important;
+}
+
+/* =====================================================
+   EC312 - ORDER COMPLETE V2
+   Navy & Champagne
+===================================================== */
+
+body.woocommerce-order-received .ec312-order-success {
+  margin: 20px 0 38px;
+  background: #ffffff;
+  border: 1px solid #e3e8ef;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Success hero */
+
+body.woocommerce-order-received .ec312-order-success-hero {
+  background: #101b2d;
+  color: #ffffff;
+  text-align: center;
+  padding: 48px 24px;
+}
+
+.ec312-order-checkmark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px;
+  border: 2px solid #d6b47a;
+  border-radius: 50%;
+  color: #d6b47a;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.ec312-order-eyebrow {
+  display: block;
+  color: #d6b47a;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.ec312-order-success-hero h1 {
+  color: #ffffff;
+  font-size: 27px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.ec312-order-success-hero p {
+  color: #e2e8f0;
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+/* Dynamic order information */
+
+.ec312-order-success-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+  padding: 24px;
+}
+
+.ec312-order-info {
+  background: #f8f9fb;
+  border: 1px solid #edf0f4;
+  border-radius: 5px;
+  padding: 17px;
+  min-width: 0;
+}
+
+.ec312-order-info span {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.ec312-order-info strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: #101b2d;
+  overflow-wrap: anywhere;
+}
+
+.ec312-order-info .amount {
+  color: #101b2d;
+  font-weight: 700;
+}
+
+/* Continue shopping */
+
+.ec312-order-success-actions {
+  padding: 0 24px 28px;
+  text-align: center;
+}
+
+.ec312-order-shop-button {
+  display: inline-block;
+  background: #101b2d;
+  border: 1px solid #101b2d;
+  border-radius: 4px;
+  color: #ffffff !important;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 14px 24px;
+  transition: all 0.25s ease;
+}
+
+.ec312-order-shop-button:hover {
+  background: #d6b47a;
+  border-color: #d6b47a;
+  color: #101b2d !important;
+}
+
+/* Original WooCommerce order details */
+
+body.woocommerce-order-received .woocommerce-order-details h2,
+body.woocommerce-order-received .woocommerce-customer-details h2 {
+  color: #101b2d;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+body.woocommerce-order-received .woocommerce-table--order-details {
+  border: 1px solid #e3e8ef;
+  border-radius: 5px;
+  background: #ffffff;
+}
+
+body.woocommerce-order-received .woocommerce-table--order-details th,
+body.woocommerce-order-received .woocommerce-table--order-details td {
+  padding: 12px;
+  font-size: 13px;
+}
+
+body.woocommerce-order-received .woocommerce-customer-details address {
+  background: #f8f9fb;
+  border: 1px solid #e3e8ef;
+  border-radius: 5px;
+  padding: 18px;
+  line-height: 1.8;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .ec312-order-success-hero {
+    padding: 34px 16px;
+  }
+
+  .ec312-order-success-hero h1 {
+    font-size: 22px;
+  }
+
+  .ec312-order-success-details {
+    grid-template-columns: 1fr;
+    padding: 16px;
+    gap: 10px;
+  }
+
+  .ec312-order-success-actions {
+    padding: 0 16px 20px;
+  }
+
+  .ec312-order-shop-button {
+    width: 100%;
+    text-align: center;
+  }
 }
