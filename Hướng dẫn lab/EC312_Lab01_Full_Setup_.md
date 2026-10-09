@@ -1,4 +1,5 @@
 # EC312 – Lab 01
+
 # Full setup, câu lệnh, cấu hình và lưu ý để dựng WordPress + WooCommerce + Flatsome bằng Docker
 
 **Sinh viên:** Lê Hiếu Huy  
@@ -85,7 +86,6 @@ Nội dung:
 
 ```yaml
 services:
-
   db:
     image: mysql:8.0
     container_name: ec312_mysql
@@ -102,7 +102,6 @@ services:
 
     networks:
       - wordpress_network
-
 
   wordpress:
     image: wordpress:php8.2-fpm
@@ -125,7 +124,6 @@ services:
     networks:
       - wordpress_network
 
-
   nginx:
     image: nginx:alpine
     container_name: ec312_nginx
@@ -144,10 +142,8 @@ services:
     networks:
       - wordpress_network
 
-
 volumes:
   db_data:
-
 
 networks:
   wordpress_network:
